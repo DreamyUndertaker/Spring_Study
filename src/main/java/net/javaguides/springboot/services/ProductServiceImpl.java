@@ -2,11 +2,12 @@ package net.javaguides.springboot.services;
 
 import net.javaguides.springboot.model.Product;
 import net.javaguides.springboot.repository.ProductsRepos;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-
-public class ProductsService implements ISproduct{
+@Component
+public class ProductServiceImpl implements ProductService {
     ProductsRepos productsRepos;
 
     @Override

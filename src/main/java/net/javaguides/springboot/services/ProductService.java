@@ -5,7 +5,7 @@ import net.javaguides.springboot.model.Product;
 import java.util.List;
 import java.util.Optional;
 
-public interface ISproduct {
+public interface ProductService {
     List<Product> getAllProducts();
     Optional<Product> findById(int id);
     Optional<Product> findByEmail(String email);

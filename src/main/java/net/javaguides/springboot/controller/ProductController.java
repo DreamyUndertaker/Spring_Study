@@ -3,7 +3,8 @@ package net.javaguides.springboot.controller;
 import net.javaguides.springboot.exception.ResourceNotFoundException;
 import net.javaguides.springboot.model.Product;
 import net.javaguides.springboot.repository.ProductsRepos;
-import org.springframework.beans.factory.annotation.Autowired;
+import net.javaguides.springboot.services.ProductService;
+import net.javaguides.springboot.services.ProductServiceImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,13 +12,17 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:5432")
 @RestController
 @RequestMapping("/api")
 public class ProductController {
 
-    @Autowired
-    private ProductsRepos productsRepos;
+    private final ProductsRepos productsRepos;
+    private final ProductServiceImpl productServiceImpl;
+
+    public ProductController(ProductsRepos productsRepos, ProductServiceImpl productServiceImpl) {
+        this.productsRepos = productsRepos;
+		this.productServiceImpl = productServiceImpl;
+	}
 
     // get all Product
     @GetMapping("/product")

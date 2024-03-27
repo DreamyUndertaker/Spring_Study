@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.experimental.Accessors;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -36,9 +37,7 @@ public class Product {
     @Column(name = "amount")
     private int amount;
     @Column(name = "redactedDate")
-    SimpleDateFormat redactedDate = new SimpleDateFormat("dd-MM-YYYY HH:mm");
+    LocalDateTime redactedDate = new LocalDateTime("dd-MM-YYYY HH:mm");
     @Column(name = "createdDate")
-    SimpleDateFormat createdDate = new SimpleDateFormat("dd-MM-YYYY HH:mm");
-
-
+    LocalDateTime  createdDate = new LocalDateTime("dd-MM-YYYY HH:mm");
 }
